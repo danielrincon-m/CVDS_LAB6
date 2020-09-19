@@ -1,1 +1,1 @@
-web:    java $JAVA_OPTS -jar PrimeFaces/target/dependency/webapp-runner.jar --port $PORT PrimeFaces/target/*.war
+web:    java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
