@@ -1,2 +1,2 @@
-# CVDS-LAB5
+# CVDS-LAB6
 Daniel Felipe Rincón Muñoz
