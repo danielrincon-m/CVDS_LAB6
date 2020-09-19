@@ -10,7 +10,8 @@ orbs:
 workflows:
   maven_test:
     jobs:
-      - maven/test
+      - maven/test: # checkout, build, test, and upload test results
+          app_src_directory: PrimeFaces
   heroku_deploy:
     jobs:
       - heroku/deploy-via-git
