@@ -1,12 +1,13 @@
 version: 2.1
 
 orbs:
-  maven: circleci/maven@0.0.12
+  maven: circleci/maven@1.0.2
 
-executors:
-  working_directory: ~/project/PrimeFaces
+#executors:
+  #working_directory: ~/project/PrimeFaces
 
 workflows:
   maven_test:
     jobs:
-      - maven/test # checkout, build, test, and upload test results
+      - maven/test: # checkout, build, test, and upload test results
+        app_src_directory: PrimeFaces
