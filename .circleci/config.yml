@@ -6,5 +6,4 @@ orbs:
 workflows:
   maven_test:
     jobs:
-      working_directory: ~/CVDS_LAB6/PrimeFaces
       - maven/test # checkout, build, test, and upload test results
