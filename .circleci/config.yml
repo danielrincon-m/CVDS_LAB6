@@ -3,6 +3,9 @@ version: 2.1
 orbs:
   maven: circleci/maven@0.0.12
 
+executors:
+  working_directory: ~/project/PrimeFaces
+
 workflows:
   maven_test:
     jobs:
