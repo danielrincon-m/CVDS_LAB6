@@ -3,7 +3,6 @@
 .idea
 *.iml
 
-.circleci
 *.code-workspace
 
 target/
