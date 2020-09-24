@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 public class BackingBean {
     private final ArrayList<Double> numbers = new ArrayList<>();
+    private String numberString = "[]";
     private double mean;
     private double standardDeviation;
     private double variance;
@@ -54,14 +55,28 @@ public class BackingBean {
         mode = maxValue;
     }
 
+    public void calculateNumberString() {
+        numberString = "[";
+        for (int i = 0; i < numbers.size(); i++) {
+            if (i != 0) {
+                numberString += ", ";
+            }
+            numberString += Double.toString(numbers.get(i));
+        }
+        numberString += "]";
+    }
+
     public void restart() {
         numbers.clear();
         calculateData();
     }
 
-    public void addNumber(double number) {
-        numbers.add(number);
-        System.out.println(numbers.toString());
+    public void addNumber(String numberString) {
+        String[] splittedNumbers = numberString.split(";");
+        for (String number : splittedNumbers){
+            numbers.add(Double.parseDouble(number));
+        }
+        //System.out.println(numbers.toString());
         calculateData();
     }
 
@@ -70,10 +85,11 @@ public class BackingBean {
         calculateMode();
         calculateStandardDeviation();
         calculateVariance();
+        calculateNumberString();
     }
 
-    public int getNumberQuantity() {
-        return numbers.size();
+    public String getNumberString() {
+        return numberString;
     }
 
     public double getStandardDeviation() {

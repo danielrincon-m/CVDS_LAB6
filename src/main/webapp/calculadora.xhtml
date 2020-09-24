@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3c.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui">
+
 <h:head>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </h:head>
+
 <h:body>
     <div class="wrapper">
         <div class="frame">
@@ -22,8 +24,15 @@
                 <p:outputPanel>
                     <p:outputLabel value="Mode: #{calculadoraBean.mode}"></p:outputLabel>
                 </p:outputPanel>
-                <p:commandButton value="Agregar" update="calculadora_form" action="#{calculadoraBean.addNumber(numInput.value)}"></p:commandButton>
-                <p:commandButton value="Borrar" update="calculadora_form" action="#{calculadoraBean.restart()}"></p:commandButton>
+                <p:outputPanel>
+                    <p:outputLabel value="Numbers: #{calculadoraBean.numberString}"></p:outputLabel>
+                </p:outputPanel>
+                <p:outputPanel>
+                    <p:commandButton update="calculadora_form" value="Agregar" action="#{calculadoraBean.addNumber(numInput.value)}"></p:commandButton>
+                    <p:commandButton value="Borrar" update=":calculadora_form" action="#{calculadoraBean.restart()}">
+                        <p:resetInput target="calculadora_form"/>
+                    </p:commandButton>
+                </p:outputPanel>
             </h:form>
         </div>
     </div>
